@@ -20,7 +20,7 @@ fb_contents = result.get_text()
 # Is a new post?
 is_file_exists = exists(".tmp1")
 if is_file_exists:
-    f = open(".tmp1", 'r')
+    f = open(".tmp1", 'r', encoding='UTF-8')
     last = f.readline()
     f.close()
 else:
@@ -28,7 +28,7 @@ else:
 
 if last != fb_contents:
     # Record the title
-    f = open(".tmp1", 'w')
+    f = open(".tmp1", 'w', encoding='UTF-8')
     f.write(fb_contents)
     f.close()
 
